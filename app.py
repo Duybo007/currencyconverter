@@ -1,6 +1,6 @@
-from flask import Flask, request, render_template, jsonify, session
+from flask import Flask, request, render_template, jsonify, session, redirect, flash
 from flask_debugtoolbar import DebugToolbarExtension
-from forex_python.converter import CurrencyRates, CurrencyCodes
+from forex_python.converter import CurrencyRates, CurrencyCodes, RatesNotAvailableError
 from decimal import *
 
 app = Flask(__name__)
@@ -19,9 +19,13 @@ def homepage():
 
 @app.route('/result')
 def get_result():
-    conv_from = request.args["converting-from"]
-    conv_to = request.args["converting-to"]
-    symbol = codes.get_symbol(conv_to)
-    amount = request.args["amount"]
-    result = round(c.convert(conv_from, conv_to, Decimal(amount)), 2)
-    return render_template("result.html", result=result, symbol=symbol)
+    try:
+        conv_from = request.args["converting-from"]
+        conv_to = request.args["converting-to"]
+        symbol = codes.get_symbol(conv_to)
+        amount = request.args["amount"]
+        result = round(c.convert(conv_from, conv_to, Decimal(amount)), 2)
+        return render_template("result.html", result=result, symbol=symbol)
+    except RatesNotAvailableError:
+        flash("Not a valid code", 'error')
+        return redirect('/')

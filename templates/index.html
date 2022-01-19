@@ -11,6 +11,9 @@
     <div class="currency-box">
         <h1>Currency Converter</h1>
         <p>Input the currencies you'd like to convert to or from, the amount and press convert!</p>
+        {% for category, msg in get_flashed_messages(with_categories=true) %}
+        <p class="{{category}}"> {{msg}} </p>
+        {% endfor %}
         <form action="/result">
             <!-- <label for="conv-from">Converting From</label> -->
             <input type="text" name="converting-from" id="conv-from" class="field" placeholder="Converting From">
