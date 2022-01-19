@@ -4,10 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
     <title>Currency Converter</title>
 </head>
 <body>
-    <div class="currency-box">what</div>
+    <div class="currency-box">
+        <h1>Currency Converter</h1>
+        <p>Input the currencies you'd like to convert to or from, the amount and press convert!</p>
+        <form action="/result">
+            <!-- <label for="conv-from">Converting From</label> -->
+            <input type="text" name="converting-from" id="conv-from" class="field" placeholder="Converting From">
+
+            <!-- <label for="conv-to">Converting To</label> -->
+            <input type="text" name="converting-to" id="conv-to" class="field" placeholder="Converting To">
+
+            <!-- <label for="amount">Amount</label> -->
+            <input type="text" name="amount" id="amount" class="field" placeholder="Input Amount">
+
+            <button type="submit" class="btn">Convert</button>
+        </form>
+    </div>
 </body>
 </html>
