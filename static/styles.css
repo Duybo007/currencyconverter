@@ -4,5 +4,59 @@
 }
 
 body {
-    background-color: #127e2f5b;
+    background-color: #95e4aa5b;
+    font-family: sans-serif;
+}
+
+.currency-box {
+    width: 500px;
+    background-color: #fff;
+    box-shadow: 0 0 20px 0 #999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+h1 {
+    width: 350px;
+    height: 40px;
+    margin-top: 65px;
+    padding: 0 100px;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    width: 350px;
+    padding: 0 75px;
+    text-align: center;
+}
+
+form {
+    margin: 35px;
+}
+
+.field {
+    width: 400px;
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #777;
+    border-radius: 14px;
+}
+
+.btn {
+    border-radius: 20px;
+    color: #fff;
+    width: 100px;
+    margin-top: 18px;
+    padding: 10px;
+    background-color: green;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
 }
