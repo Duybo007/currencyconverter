@@ -1,0 +1,25 @@
+
+.row_posters > img {
+    border-radius: 10px;
+}
+
+.hovered {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+
+
+}
+
+.hovered_poster > img{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    z-index: 4;
+    top: 0;
+    border-radius: 10px;
+}
+
+.hovered_poster{
+    position: relative
+}
